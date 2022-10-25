@@ -8,34 +8,34 @@ public class SnakeLadder {
 		int position = 0;
 		int count = 0;
 		Random random = new Random();
-		int randomNum = random.nextInt(6) + 1;
-		System.out.println("Dice generated " + randomNum);
-		int option = random.nextInt(3);
-		System.out.println("option = " + option);
-		switch (option) {
+		while (position >= 0 && position < 100) {
+			int randomNum = random.nextInt(6) + 1;
+			System.out.println("Dice generated " + randomNum);
+			int option = random.nextInt(3);
+			System.out.println("option = " + option);
+			switch (option) {
 
-		case 0:
-			System.out.println("Player stays in the same position");
-			break;
+			case 0:
+				System.out.println("Player stays in the same position");
+				break;
 
-		case 1:
-			position = position + randomNum;
-			if (position > 100)
-			{
-			   position -= randomNum;
+			case 1:
+				position = position + randomNum;
+				if (position > 100) {
+					position -= randomNum;
+				}
+				System.out.println("Player moved at next position " + position);
+				break;
+
+			case 2:
+				position -= randomNum;
+				if (position < 0) {
+					position = 0;
+				}
+				System.out.println("Player moved back " + position);
+
 			}
-			System.out.println("Player moved at next position " + position);
-			break;
-
-		case 2:
-			position -= randomNum;
-			if (position < 0)
-			{
-				position = 0;
-			}
-			System.out.println("Player moved back " + position);
-
+			System.out.println();
 		}
-		System.out.println();
 	}
 }
