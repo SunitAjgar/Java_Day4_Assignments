@@ -7,5 +7,8 @@ public class SnakeLadder {
 	System.out.println("Displaying Snake and Ladder game");
 	int position = 0;
 	int count = 0;
+	Random random = new Random();
+	int randomNum = random.nextInt(6) + 1;
+	System.out.println("Dice generated " +randomNum);
 	}
 }
